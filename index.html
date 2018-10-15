@@ -1,0 +1,68 @@
+<!DOCTYPE html><html dir="ltr" lang="en"><head>
+  <meta charset="utf-8">
+  <title>Eleições Limpas</title>
+
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Eleições Limpas, aplicativo web PWA para resultados de eleições e fiscalização de apuração da votação eletrônica por meio da digitalização de boletins de urna">
+  <meta name="theme-color" content="#16161d">
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ionic PWA">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta http-equiv="x-ua-compatible" content="IE=Edge">
+
+  <noscript>
+  Esta aplicação requer JavaScript para funcionar, por favor habilite o suporte a JavaScript no seu navegador
+  </noscript>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.log('Error', err));
+    }
+  </script>
+
+<!--  <script src='https://unpkg.com/stencil-fetch@latest/dist/fetch.js'></script>-->
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.10/dialog-polyfill.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dialog-polyfill/0.4.10/dialog-polyfill.js">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.2/clipboard.js"></script>
+
+  <link href="/build/app.css" rel="stylesheet">
+  <script src="/build/app.js"></script>
+
+  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
+
+  <link rel="manifest" href="/manifest.json">
+<!--  <link rel='stylesheet' type='text/css' href='/assets/lib/dialog-polyfill/dialog-polyfill.css' />-->
+<!--  <script src="/assets/lib/dialog-polyfill/dialog-polyfill.js"></script>-->
+<!--  <script src="/assets/lib/clipboard/dist/clipboard.min.js"></script>-->
+</head>
+
+<body>
+
+  <app-root></app-root>
+
+
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      // auto-unregister service worker during dev mode
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (registration) {
+          registration.unregister().then(function() { location.reload(true) });
+        }
+      });
+    }
+  </script>
+
+
+
+
+</body></html>
